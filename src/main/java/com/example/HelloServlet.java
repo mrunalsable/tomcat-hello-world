@@ -13,7 +13,7 @@ public class HelloServlet extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         out.println("<html><body>");
-        out.println("<h1>My Automated Pipeline is Live!</h1>");
+        out.println("<h1>Pipeline Update Success! Version 2.0 is Live!</h1>");
         out.println("</body></html>");
     }
 }
