@@ -11,7 +11,7 @@ pipeline {
         IMAGE_REPO_NAME = 'tomcat-hello-world'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-        TOMCAT_IP = '44.203.79.215' 
+        TOMCAT_IP = '44.222.76.184' 
     }
 
     stages {
