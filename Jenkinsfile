@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    // This block tells Jenkins to find and use Maven
+    tools {
+        maven 'maven3' 
+    }
+
     environment {
         AWS_ACCOUNT_ID = '690824934965'
         AWS_DEFAULT_REGION = 'us-east-1'
@@ -38,6 +43,7 @@ pipeline {
 
     post {
         always {
+            // The '|| true' ensures the pipeline doesn't fail if the image wasn't created yet
             sh "docker rmi ${REPOSITORY_URI}:${IMAGE_TAG} || true"
             sh "docker rmi ${REPOSITORY_URI}:latest || true"
             sh "docker system prune -f"
